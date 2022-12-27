@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('config.php');
 if (!isset($_SESSION['user'])) {
     header('Location:index.php');
 }
@@ -24,7 +25,8 @@ if (!isset($_SESSION['user'])) {
 <body>
     <h1 class="text-3xl font-bold underline text-center">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
-
+    <h2>Genres</h2>
+    <div class='containerGenre grid px-4 py-4 grid-cols-autofill md:grid-cols-10' id='crudApp'></div>
 
     <h2 class='pl-4 text-slate-800 '>Films populaires du moment</h2>
     <div class='container grid px-4 py-4 grid-cols-[150px_150px_150px] md:grid-cols-10' id='crudApp'></div>
@@ -34,6 +36,39 @@ if (!isset($_SESSION['user'])) {
 
     <a href="deconnexion.php"><button>Déconnexion</button></a>
     <!-- <script src='axios.js' async></script> -->
+
+    <?php
+    require_once('new_album.php');
+    if (isset($_GET['reg_err'])) {
+        $err = htmlspecialchars($_GET['reg_err']);
+        switch ($err) {
+
+
+            case 'name_length':
+    ?>
+
+                <div class="alert">
+                    <strong>Erreur</strong>Nom trop long
+                </div>
+            <?php
+                break;
+
+            case 'already':
+            ?>
+
+                <div class="alert">
+                    <strong>Erreur</strong>Un des vos albums avec le même nom existe
+                </div>
+    <?php
+                break;
+        }
+    } ?>
+
+
+
+
+
+
     <form action="new_album.php" method="post" class="mt-[40px]">
         <fieldset>
             <h2 class="text-[20px] font-bold ">Ajouter un album</h2>
@@ -49,6 +84,13 @@ if (!isset($_SESSION['user'])) {
         </fieldset>
     </form>
 
+
+    <?php
+    // $sql = "SELECT * FROM `album` "
+    // var_dump(session_id());
+    // require_once("new_album.php");
+    // var_dump($dataID);
+    ?>
 
 
 

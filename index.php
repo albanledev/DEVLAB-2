@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Bienvenue NOM PRENOM</h1>
+    <h1>Bienvenue</h1>
 
     <?php
     echo date('y-m-d h:i:s');

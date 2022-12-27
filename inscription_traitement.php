@@ -22,6 +22,7 @@ if (isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password'
                     if ($password == $password2) {
                         $password = hash('sha256', $password);
                         $_SESSION['user'] = $data['pseudo'];
+                        $id_session = session_id();
 
                         $insert = $bdd->prepare('INSERT INTO users(pseudo, email, password,date_inscription) VALUES(:pseudo,:email,:password,:date_inscription)');
                         $insert->execute(array(
