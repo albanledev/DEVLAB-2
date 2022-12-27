@@ -4,7 +4,7 @@ axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=64f788e08bd9e0a
     console.log(response.data.genres)
     response.data.genres.forEach(element => {
 
-        containerGenre.innerHTML += "<div> <div class='border-4'>" + 
+        containerGenre.innerHTML += " <div class='border-4 w-fit y-[50px] px-4 item bg-white'>" + 
         "<a href='genre.php' id='"+element.id + "> ' alt=''>"+ element.name + "</a>" + 
 
         "</div>"

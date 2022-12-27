@@ -7,6 +7,28 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+@media screen and (max-width:780px) {
+  @keyframes translation{
+    /* from {
+      transform: translateY(-0px) ;
+    } */
+    to{
+      transform: translateX(-1400px) ;
+    }
+  }
+  
+  .containerGenre{
+    animation: translation 15s cubic-bezier(0.25, 0.25, 0.25, 0.25) 0s infinite;
+  
+  }
+  
+  .containerGenre::-webkit-scrollbar{
+    width: 0;
+  }
+  
+}
+
+
 *,
 ::before,
 ::after {

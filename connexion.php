@@ -7,7 +7,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
 
-    $check = $bdd->prepare('SELECT pseudo, email, password FROM users WHERE email = ?');
+    $check = $bdd->prepare('SELECT pseudo, email, id, password FROM users WHERE email = ?');
     $check->execute(array($email));
     $data = $check->fetch();
     $row = $check->rowCount();
@@ -18,6 +18,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
             if ($data['password'] == $password) {
                 $_SESSION['user'] = $data['pseudo'];
+                $_SESSION['id'] = $data['id'];
+
                 header('Location:landing.php');
             } else header('Location:index.php?login_err=password');
         } else header('Location:index.php?login_err=email');

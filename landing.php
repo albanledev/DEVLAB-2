@@ -22,14 +22,14 @@ if (!isset($_SESSION['user'])) {
     <title>Bonjour</title>
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline text-center">Bonjour <?php echo $_SESSION['user']; ?></h1>
+<body class='overflow-x-hidden'>
+    <h1 class="text-3xl font-bold underline text-center p-4">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
     <h2>Genres</h2>
-    <div class='containerGenre grid px-4 py-4 grid-cols-autofill md:grid-cols-10' id='crudApp'></div>
+    <div class='containerGenre  px-4 py-4 md:px-0 flex overflow-x-visible md:grid md:grid-cols-10 m-auto ' id='crudApp'></div>
 
     <h2 class='pl-4 text-slate-800 '>Films populaires du moment</h2>
-    <div class='container grid px-4 py-4 grid-cols-[150px_150px_150px] md:grid-cols-10' id='crudApp'></div>
+    <div class='container grid px-4 py-4 grid-cols-3 md:grid-cols-6 lg:grid-cols-10' id='crudApp'></div>
 
     <button id='getBtn'>get Data</button>
     <!-- <button id='postBtn'>2</button> -->
@@ -87,7 +87,7 @@ if (!isset($_SESSION['user'])) {
 
     <?php
     // $sql = "SELECT * FROM `album` "
-    // var_dump(session_id());
+    var_dump($_SESSION);
     // require_once("new_album.php");
     // var_dump($dataID);
     ?>
