@@ -48,7 +48,7 @@ if (!isset($_SESSION['user'])) {
     ?>
 
                 <div class="alert">
-                    <strong>Erreur</strong>Nom trop long
+                    <strong>Erreur</strong> taille du nom de l'album invalide
                 </div>
             <?php
                 break;
@@ -88,8 +88,22 @@ if (!isset($_SESSION['user'])) {
     <?php
     // $sql = "SELECT * FROM `album` "
     var_dump($_SESSION);
-    // require_once("new_album.php");
-    // var_dump($dataID);
+
+    $affichageAlbums = $bdd->prepare('SELECT name FROM ALBUM 
+    JOIN users_album ON album.id = album_id
+    JOIN users ON users.id = users_id WHERE users_id = :users_id');
+    $affichageAlbums->execute(
+        [
+            'users_id' => $_SESSION['id']
+        ]
+
+    );
+    $albums = $affichageAlbums->fetchAll();
+    print_r($albums);
+
+    foreach ($albums as $album) {
+        echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2>";
+    }
     ?>
 
 

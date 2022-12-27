@@ -24,7 +24,7 @@ if (isset($_POST['name']) && isset($_POST['public'])) {
     $row = $check->rowCount();
 
     if ($row == 0) {
-        if (strlen($name) <= 100) {
+        if (strlen($name) <= 100 && strlen($name) > 0) {
 
 
 
