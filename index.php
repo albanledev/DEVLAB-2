@@ -12,8 +12,8 @@
     <h1>Bienvenue</h1>
 
     <?php
-    echo date('y-m-d h:i:s');
-    require_once('inscription.php');
+    // echo date('y-m-d h:i:s');
+    // require_once('inscription.php');
 
     if (isset($_GET['login_err'])) {
         $err = htmlspecialchars($_GET['login_err']);
@@ -63,10 +63,12 @@
         <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="Mot de passe" required>
         </div>
+        <p>Vous n'êtes pas encore inscrits ? <a href="inscription.php">Cliquez sur ce lien</a></p>
         <div class="form-group">
             <button type="submit">Connexion</button>
         </div>
     </form>
+
 
 
 
