@@ -87,7 +87,7 @@ if (!isset($_SESSION['user'])) {
 
     <?php
     // $sql = "SELECT * FROM `album` "
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
 
     $affichageAlbums = $bdd->prepare('SELECT name FROM ALBUM 
     JOIN users_album ON album.id = album_id
@@ -104,6 +104,9 @@ if (!isset($_SESSION['user'])) {
     foreach ($albums as $album) {
         echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2>";
     }
+
+    // require("connexion.php");
+
     ?>
 
 

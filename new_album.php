@@ -2,7 +2,7 @@
 
 
 require_once 'config.php';
-session_start();
+// session_start();
 
 if (isset($_POST['name']) && isset($_POST['public'])) {
     $name = htmlspecialchars($_POST['name']);

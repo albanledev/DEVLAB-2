@@ -22,7 +22,9 @@ if (isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password'
                     if ($password == $password2) {
                         $password = hash('sha256', $password);
                         $_SESSION['user'] = $data['pseudo'];
-                        $id_session = session_id();
+
+                        // $_SESSION['id'] = $data['id'];
+                        // $id_session = session_id();
 
                         $insert = $bdd->prepare('INSERT INTO users(pseudo, email, password,date_inscription) VALUES(:pseudo,:email,:password,:date_inscription)');
                         $insert->execute(array(
@@ -32,6 +34,16 @@ if (isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password'
                             'date_inscription' => $date
 
                         ));
+
+
+                        // $check = $bdd->prepare('SELECT pseudo, email, id, password FROM users WHERE email = ?');
+                        // $check->execute();
+                        // $dataYES = $check->fetch();
+                        // $realData = $dataYES[0];
+                        // $_SESSION[]
+
+
+
                         $_SESSION['user'] = $data['pseudo'];
                         header('Location:landing.php');
                     } else header('Location: index.php?reg_err=password');
