@@ -9,6 +9,7 @@ if (isset($_POST['name']) && isset($_POST['public'])) {
     $public = htmlspecialchars($_POST['public']);
     $likes = 0;
     $date = date('y-m-d h:i:s');
+    $isDefault = 0;
 
     if ($_POST['public'] == 'publique') {
         $public = 0;
@@ -31,12 +32,13 @@ if (isset($_POST['name']) && isset($_POST['public'])) {
 
             // $_SESSION['user'] = $data['pseudo'];
 
-            $insert = $bdd->prepare('INSERT INTO album(name, isPublic, likes, created_at) VALUES(:name,:public,:likes,:date)');
+            $insert = $bdd->prepare('INSERT INTO album(name, isPublic, likes, created_at, isDefault) VALUES(:name,:public,:likes,:date, :isDefault)');
             $insert->execute([
                 'name' => $name,
                 'public' => $public,
                 'likes' => $likes,
-                'date' => $date
+                'date' => $date,
+                'isDefault' => $isDefault
             ]);
 
 

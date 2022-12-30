@@ -89,7 +89,7 @@ if (!isset($_SESSION['user'])) {
     // $sql = "SELECT * FROM `album` "
     // var_dump($_SESSION);
 
-    $affichageAlbums = $bdd->prepare('SELECT  album.id, name, isPublic, likes FROM ALBUM 
+    $affichageAlbums = $bdd->prepare('SELECT  album.id, name, isPublic, likes, isDefault FROM ALBUM 
     JOIN users_album ON album.id = album_id
     JOIN users ON users.id = users_id WHERE users_id = :users_id');
     $affichageAlbums->execute(
@@ -113,9 +113,9 @@ if (!isset($_SESSION['user'])) {
     foreach ($albums as $album) {
         // if $utilisateur
 
-        echo "<br><br>;
+        echo "<br><br>
          <div class='bg-green-800'><h3> " . $album['name'] . "</h3><br></div>
-        <p>Il a " . $album['likes'] . " likes</p>;
+        <p>Il a " . $album['likes'] . " likes</p>
         ";
         if ($album['isPublic'] == 0) {
             echo "<p>L'album est public</p>";
@@ -124,16 +124,18 @@ if (!isset($_SESSION['user'])) {
         }
 
 
-        echo " <form action='delete.php' method='POST'>
+        if ($album['isDefault'] == 0) {
+            echo " <form action='delete.php' method='POST'>
     
             <div class='flex_supp'>
                 <div><input type='hidden' name='supp' value='" . $album['id'] . "'></div>
-                <div><button type='submit' class='delete_button'>Supprimer le post</button></div>
+                <div><button type='submit' class='text-red-500'>Supprimer le post</button></div>
             </div>
     
     
             </form>
         ";
+        }
     }
 
     // require("connexion.php");

@@ -43,12 +43,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 print_r($cptVisionnage);
 
                 if ($cptVisionnage == 0) {
-                    $insertWatched = $bdd->prepare("INSERT INTO album(name, isPublic, likes, created_at) VALUES (:name,:public,:likes,:date) ");
+                    $insertWatched = $bdd->prepare("INSERT INTO album(name, isPublic, likes, created_at, isDefault) VALUES (:name,:public,:likes,:date, :isDefault) ");
                     $insertWatched->execute([
                         "name" => 'visionnés',
                         "public" => 0,
                         "likes" => 0,
-                        "date" => $date
+                        "date" => $date,
+                        "isDefault" => 1
+
 
                     ]);
 
@@ -73,12 +75,13 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
                     // --------------------------------------------Listes d'envies
 
-                    $insertEnvie = $bdd->prepare("INSERT INTO album(name, isPublic, likes, created_at) VALUES (:name,:public,:likes,:date) ");
+                    $insertEnvie = $bdd->prepare("INSERT INTO album(name, isPublic, likes, created_at, isDefault) VALUES (:name,:public,:likes,:date, :isDefault) ");
                     $insertEnvie->execute([
                         "name" => "Liste d'envies",
                         "public" => 0,
                         "likes" => 0,
-                        "date" => $date
+                        "date" => $date,
+                        "isDefault" => 1
 
                     ]);
 
