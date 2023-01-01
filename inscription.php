@@ -9,11 +9,12 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <h2>Inscription</h2>
+
 
     <?php
     if (isset($_GET['reg_err'])) {
@@ -69,22 +70,23 @@ session_start();
     }
     ?>
 
-    <form action="inscription_traitement.php" method="post">
-
-        <div class="form-group">
-            <input type="text" name="pseudo" class="form-control" placeholder="Pseudo" required>
+    <form class="text-center" action="inscription_traitement.php" method="post">
+        <h2 class="mt-[150px] mb-[50px] text-center font-poppins font-semibold text-[20px]">S'inscrire</h2>
+        <div class="pt-[22px] px-[22px] form-group">
+            <input type="text" name="pseudo" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Pseudo" required>
         </div>
-        <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Email" required>
+        <div class="pt-[22px] px-[22px]  form-group">
+            <input type="email" name="email" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Email" required>
         </div>
-        <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="Mot de passe" required>
+        <div class="pt-[22px] px-[22px]  form-group">
+            <input type="password" name="password" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Mot de passe" required>
         </div>
-        <div class="form-group">
-            <input type="password" name="password2" class="form-control" placeholder="Confirmer le mot de passe" required>
+        <div class="p-[22px] form-group">
+            <input type="password" name="password2" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Confirmer le mot de passe" required>
         </div>
+        <p class="text-center mb-[22px] text-[12px]">Vous êtes déjà inscrit ? <a class="text-[12px] font-poppins font-semibold " href="index.php">S'identifier</a></p>
         <div class="form-group">
-            <button type="submit">Inscription</button>
+            <button class=" text-white bg-gray-700 px-16 py-2 rounded-[9px]" type="submit">S'inscrire</button>
         </div>
     </form>
 </body>

@@ -65,7 +65,7 @@
         <div class="p-[22px] form-group">
             <input type="password" name="password" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Mot de passe" required>
         </div>
-        <p class="mb-[22px] text-[12px]">Vous n'êtes pas encore inscrits ? <a class="text-[12px] font-poppins font-semibold " href="inscription.php">Cliquez sur ce lien</a></p>
+        <p class="mb-[22px] text-[12px]">Vous n'êtes pas encore inscrits ? <a class="text-[12px] font-poppins font-semibold " href="inscription.php">S'inscrire</a></p>
         <div class="form-group">
             <button class="text-white bg-gray-700 px-16 py-2 rounded-[9px]" type="submit">S'identifier</button>
         </div>
