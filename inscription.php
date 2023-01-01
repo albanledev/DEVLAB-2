@@ -71,7 +71,7 @@ session_start();
     ?>
 
     <form class="text-center" action="inscription_traitement.php" method="post">
-        <h2 class="mt-[150px] mb-[50px] text-center font-poppins font-semibold text-[20px]">S'inscrire</h2>
+        <h2 class="mt-[110px] mb-[50px] text-center font-poppins font-semibold text-[20px]">S'inscrire</h2>
         <div class="pt-[22px] px-[22px] form-group">
             <input type="text" name="pseudo" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Pseudo" required>
         </div>
