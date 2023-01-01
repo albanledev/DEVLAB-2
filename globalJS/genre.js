@@ -1,4 +1,4 @@
-const containerMovie = document.querySelector('.containerMovie')
+const containerGenre = document.querySelector('.containerGenre')
 
 // on récupère ici l'id dans l'url du film
 let queryString = window.location.search;  // Get the query string from the URL
@@ -6,16 +6,22 @@ let params = new URLSearchParams(queryString);  // Create a URLSearchParams obje
 let paramValue = params.get('id');  // Get the value of the 'paramName' query parameter
 console.log(paramValue)
 
-axios.get(`https://api.themoviedb.org/3/movie/${paramValue}?api_key=64f788e08bd9e0a43741986b76b23424&language=en-US`).then(response => {
+axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=64f788e08bd9e0a43741986b76b23424&with_genres=${paramValue}`).then(response => {
+    // https://api.themoviedb.org/3/discover/movie?api_key=YOUR_API_KEY&with_genres=28
 
-let dataArray = [response.data];  // Convert response.data to an array
 
-    console.log(response.data)
+    // https://api.themoviedb.org/3/movie/${paramValue}?api_key=64f788e08bd9e0a43741986b76b23424&language=en-US
+
+
+// let dataArray = [response.data];  // Convert response.data to an array
+
+    console.log(response.data.results)
     // console.log(dataArray)
-    dataArray.forEach(element => {
-        containerMovie.innerHTML =       `<img src="https://image.tmdb.org/t/p/w500${element['backdrop_path']}" alt=''>` +
+    response.data.results.forEach(element => {
+        containerGenre.innerHTML +=       `<a href='movie.php?id=${element.id}'><img src="https://image.tmdb.org/t/p/w500${element['backdrop_path']}" alt=''></a>` 
+        // +
         
-        "<h1 class='font-bold text-red-500 text-[40px]'>" + element.title + '</h1>'   +'<p>'+element.overview+'</p>'
+        // "<h1 class='font-bold text-red-500 text-[40px]'>" + element.title + '</h1>'   +'<p>'+element.overview+'</p>'
 
 // console.log(element['backdrop_path'])
 // console.log(element)

@@ -5,7 +5,8 @@ axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=64f788e08bd9e0a
     response.data.genres.forEach(element => {
 
         containerGenre.innerHTML += " <div class='border-4 w-fit y-[50px] px-4 item bg-white'>" + 
-        "<a href='genre.php' id='"+element.id + "> ' alt=''>"+ element.name + "</a>" + 
+        `<a href='genre.php?id=${element.id}'> ${element.name}</a>` + 
+        // `<a href='movie.php?id=${element.id}'><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
 
         "</div>"
 
@@ -68,6 +69,4 @@ const container = document.querySelector('.container')
 
 
 
-let id = "wallah"
-localStorage.setItem("id_film",id)
     
