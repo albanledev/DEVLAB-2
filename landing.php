@@ -15,6 +15,7 @@ if (!isset($_SESSION['user'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src='axios.js' async></script>
 
     <link href="dist/output.css" rel="stylesheet">
@@ -23,9 +24,9 @@ if (!isset($_SESSION['user'])) {
 </head>
 
 <body class='overflow-x-hidden'>
-    <h1 class="text-3xl font-bold underline text-center p-4">Bonjour <?php echo $_SESSION['user']; ?></h1>
+    <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
-    <h2>Genres</h2>
+    <h2 class="ml-[20px] mt-[20px] font-poppins text-[16px]">Genres</h2>
     <div class='containerGenre  px-4 py-4 md:px-0 flex overflow-x-visible md:grid md:grid-cols-10 m-auto ' id='crudApp'></div>
 
     <h2 class='pl-4 text-slate-800 '>Films populaires du moment</h2>

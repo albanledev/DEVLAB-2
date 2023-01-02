@@ -22,4 +22,14 @@ if (!isset($_SESSION['user'])) {
 <body>
 
     <div class="containerMovie"></div>
+
+    <footer>
+        <div class="py-[20px] text-white flex place-content-around bg-gray-800 fixed bottom-0 w-[100%]">
+            <a href="#">profil</a>
+            <a href="landing.php">accueil</a>
+            <a href="#">recherche</a>
+            <a href="#">invitations</a>
+        </div>
+    </footer>
+
 </body>

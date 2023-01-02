@@ -13,9 +13,9 @@ let dataArray = [response.data];  // Convert response.data to an array
     console.log(response.data)
     // console.log(dataArray)
     dataArray.forEach(element => {
-        containerMovie.innerHTML =       `<img src="https://image.tmdb.org/t/p/w500${element['backdrop_path']}" alt=''>` +
+        containerMovie.innerHTML =       `<img class="object-cover min-h-[250px]" src="https://image.tmdb.org/t/p/w500${element['backdrop_path']}" alt=''>` +
         
-        "<h1 class='font-bold text-red-500 text-[40px]'>" + element.title + '</h1>'   +'<p>'+element.overview+'</p>'
+        "<h1 class='my-[30px] mx-[20px] font-poppins font-semibold text-[20px]'>" + element.title + '</h1>'   +'<p class="mx-[20px]">'+element.overview+'</p>'
 
 // console.log(element['backdrop_path'])
 // console.log(element)
