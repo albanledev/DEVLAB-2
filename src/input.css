@@ -2,21 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes translation{
-    /* from {
-      transform: translateY(-0px) ;
-    } */
-    to{
-      transform: translateY(-300px) ;
-    }
-  }
-  
-  .containerGenre{
-    animation: translation 5s ease-in-out infinite;
-    width: 100vw;
-  }
-
-  .containerGenre div{
-    animation: translation 5s ease-in-out infinite;
-    width: 100vw;
-  }

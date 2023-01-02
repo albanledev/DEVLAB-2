@@ -27,9 +27,9 @@ if (!isset($_SESSION['user'])) {
     <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
     <h2 class="ml-[20px] mt-[20px] font-poppins text-[16px]">Genres</h2>
-    <div class='containerGenre  px-4 py-4 md:px-0 flex overflow-x-visible md:grid md:grid-cols-10 m-auto ' id='crudApp'></div>
+    <div class='containerGenre flex  overflow-x-auto sm:block  id='crudApp'></div>
 
-    <h2 class='pl-4 text-slate-800 '>Films populaires du moment</h2>
+    <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
     <div class='container grid px-4 py-4 grid-cols-3 md:grid-cols-6 lg:grid-cols-10' id='crudApp'></div>
 
     <button id='getBtn'>get Data</button>
