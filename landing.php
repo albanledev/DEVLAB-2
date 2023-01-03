@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
     <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
     <h2 class="ml-[20px] mt-[20px] font-poppins text-[16px]">Genres</h2>
-    <div class='containerGenre flex  overflow-x-auto sm:block  id='crudApp'></div>
+    <div class='containerGenre flex  overflow-x-auto sm:block  id=' crudApp'></div>
 
     <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
     <div class='container grid px-4 py-4 grid-cols-3 md:grid-cols-6 lg:grid-cols-10' id='crudApp'></div>
@@ -100,19 +100,39 @@ if (!isset($_SESSION['user'])) {
 
     );
     $albums = $affichageAlbums->fetchAll();
-    echo "<pre>";
-    print_r($albums);
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r($albums);
+    // echo "</pre>";
+
+    // On recupère les films dans chaque album
+    $affichageFilms = $bdd->prepare('SELECT * FROM films
+    JOIN album on album.id = album_id
+
+    -- WHERE album_id = 100
+');
+    $affichageFilms->execute(
+        []
+
+    );
+    $films = $affichageFilms->fetchAll();
+    // echo "<pre>";
+    // print_r($films);
+    // echo "</pre>";
 
 
-    foreach ($albums as $album) {
-        echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2>";
-    }
+
+
+
+    // foreach ($albums as $album) {
+    //     echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2>";
+    // }
 
 
 
     foreach ($albums as $album) {
         // if $utilisateur
+
+
 
         echo "<br><br>
          <div class='bg-green-800'><h3> " . $album['name'] . "</h3><br></div>
@@ -122,6 +142,17 @@ if (!isset($_SESSION['user'])) {
             echo "<p>L'album est public</p>";
         } else {
             echo "<p>L'album est privé</p>";
+        }
+
+        foreach ($films as $film) {
+            if ($film['album_id'] == $album['id']) {
+                echo "<div class='text-purple-700'>" . $film['id_film'] . "</div>";
+                // echo "<a href='movie.php?id='" . $_SESSION['idFilm'] .
+                //     "'>
+
+                // </a>";
+                echo "<div class='containerListeFilms'></div>";
+            }
         }
 
 

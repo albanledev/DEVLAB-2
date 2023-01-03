@@ -30,7 +30,7 @@ if (!isset($_SESSION['user'])) {
     <?php
 
     $_SESSION["idFilm"] = $_GET['id'];
-    echo $_SESSION["idFilm"];
+    // echo $_SESSION["idFilm"];
 
     $affichageAlbums = $bdd->prepare('SELECT  album.id, name, isPublic, likes, isDefault FROM ALBUM 
     JOIN users_album ON album.id = album_id
@@ -46,7 +46,12 @@ if (!isset($_SESSION['user'])) {
     // print_r($albums);
     // echo "</pre>";
 
+    // echo '<pre>';
+    // print_r($albums);
+    // echo '</pre>';
     ?>
+
+
     <form action="ajoutFilm.php" method="POST">
         <label for="pet-select">Ajouter ce film dans l'album : </label>
 
@@ -54,14 +59,36 @@ if (!isset($_SESSION['user'])) {
             <?php
 
             foreach ($albums as $album) {
-                // echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2>";
-                echo "<option value=" . urlencode($album['name']) . ">" . $album['name'] . "</option>";
+                // echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2><h3>" . $album['id'] . "</h3>";
+                echo "<option value=" . $album['id'] . ">" . $album['name'] . "</option>";
+                // "<input type='hidden' name='idAlbum' value='" .  $album['id']  . "'>";
+                // '<input type="hidden" name="idAlbum" value="' . $album['id'] . '">';
+
+
             }
             ?>
         </select>
+        <?php
+
+        foreach ($albums as $album) {
+
+            // echo '<input type="hidden" name="idAlbum" value="' . $album['id'] . '">';
+        }
+        ?>
         <br>
         <button type="submit" class="bg-gray-600 text-white">Ajouter</button>
     </form>
+
+
+    <?php
+
+    foreach ($albums as $album) {
+        echo "<div class='mb-[80px]'><h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2><h3>" . $album['id'] . "</h3></div>";
+    }
+    ?>
+
+
+
 
     <?php if (isset($_GET['reg_err'])) {
         $err = htmlspecialchars($_GET['reg_err']);
@@ -74,6 +101,8 @@ if (!isset($_SESSION['user'])) {
 
                 <div class="alert">
                     <strong>Erreur</strong>Vous ne pouvez pas mettre 2 fois le film dans le même album
+
+
                 </div>
     <?php
                 break;
