@@ -26,11 +26,14 @@ if (!isset($_SESSION['user'])) {
 <body class='overflow-x-hidden'>
     <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
-    <h2 class="ml-[20px] mt-[20px] font-poppins text-[16px]">Genres</h2>
-    <div class='containerGenre flex  overflow-x-auto sm:block  id=' crudApp'></div>
 
-    <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
-    <div class='container grid px-4 py-4 grid-cols-3 md:grid-cols-6 lg:grid-cols-10' id='crudApp'></div>
+
+    <h2 class=" ml-[20px] mt-[20px] font-poppins text-[16px]">Genres</h2>
+    <div class="containerGenre  ml-[10px] flex  overflow-x-auto sm:block  id='crudApp'"></div>
+
+
+    <h2 class='ml-[20px] mt-[20px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
+    <div class='container ml-[20px] flex overflow-x-auto  md:grid md:grid-cols-6 lg:grid-cols-10' id='crudApp'></div>
 
     <button id='getBtn'>get Data</button>
     <!-- <button id='postBtn'>2</button> -->
@@ -72,7 +75,7 @@ if (!isset($_SESSION['user'])) {
 
     <form action="new_album.php" method="post" class="mt-[40px]">
         <fieldset>
-            <h2 class="text-[20px] font-bold ">Ajouter un album</h2>
+            <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Ajouter un album</h2>
 
             <input type="text" name="name" placeholder="Nom de l'album" /><br>
             <div>
@@ -123,9 +126,7 @@ if (!isset($_SESSION['user'])) {
 
 
 
-    // foreach ($albums as $album) {
-    //     echo "<h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2>";
-    // }
+
 
 
 
@@ -135,13 +136,14 @@ if (!isset($_SESSION['user'])) {
 
 
         echo "<br><br>
-         <div class='bg-green-800'><h3> " . $album['name'] . "</h3><br></div>
-        <p>Il a " . $album['likes'] . " likes</p>
+        <div class='block'>
+        <div class='ml-[20px] font-poppins font-semibold text-[16px]'><h3> " . $album['name'] . "</h3></div>
+        <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
         if ($album['isPublic'] == 0) {
-            echo "<p>L'album est public</p>";
+            echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>publique</p>";
         } else {
-            echo "<p>L'album est privé</p>";
+            echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
         }
 
         foreach ($films as $film) {
@@ -161,7 +163,7 @@ if (!isset($_SESSION['user'])) {
     
             <div class='flex_supp'>
                 <div><input type='hidden' name='supp' value='" . $album['id'] . "'></div>
-                <div><button type='submit' class='text-red-500'>Supprimer le post</button></div>
+                <div><button type='submit' class='py-[3px] px-[15px] rounded-[9px] bg-gray-700 text-white ml-[20px] font-poppins text-[12px]'>Supprimer l'album</button></div><br>
             </div>
     
     
@@ -173,6 +175,9 @@ if (!isset($_SESSION['user'])) {
     // require("connexion.php");
 
     ?>
+    <br>
+    </div>
+
 
 
 
