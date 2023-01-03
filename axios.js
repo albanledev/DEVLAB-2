@@ -25,7 +25,7 @@ const container = document.querySelector('.container')
         console.log(response.data.results)
         response.data.results.forEach(element => {
 
-            container.innerHTML += "<div> <div class='m-[2px]'>" +
+            container.innerHTML += "<div> <div class='ml-[4px] w-[160px] h-[250px] '>" +
 
 
              
@@ -35,7 +35,7 @@ const container = document.querySelector('.container')
 //Version qui marche
             // "<a href='movie.php?id='"+element.id +"'><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"  + element.poster_path +  "' alt=''></a>" 
 
-            `<a href='movie.php?id=${element.id}'><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
+            `<a href='movie.php?id=${element.id}'><img class='object-cover' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
             + 
             // "`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/` + pays.poster_path" alt=""
             "</div>"
