@@ -26,7 +26,7 @@ if (isset($_POST['film'])) {
 
 
     $check = $bdd->prepare(
-        'SELECT id_film, album_id FROM films  
+        'SELECT id_film, album_id, films.name, bin FROM films  
     JOIN album ON album_id = album.id 
     WHERE album.id = :album
     AND films.id_film = :idFilm'
@@ -42,12 +42,15 @@ if (isset($_POST['film'])) {
 
 
     if ($row == 0) {
-        $insert = $bdd->prepare('INSERT INTO films(id_film, album_id) VALUES(:id_film,:album_id)');
+        $insert = $bdd->prepare('INSERT INTO films(id_film, album_id,name,bin) VALUES(:id_film,:album_id, :name, :bin)');
         $insert->execute([
             'id_film' => $_SESSION['idFilm'],
-            'album_id' => $album
+            'album_id' => $album,
+            'name' => $_SESSION['nameFilm'],
+            'bin' => $_SESSION['binFilm']
+
 
         ]);
-        header('Location: movie.php?id=' . $_SESSION["idFilm"]);
+        header('Location: movie.php?id=' . $_SESSION["idFilm"] . "&name=" . $_SESSION['nameFilm'] . "&bin=" . $_SESSION['binFilm']);
     } else header('Location: movie.php');
 }

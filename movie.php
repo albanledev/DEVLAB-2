@@ -30,6 +30,8 @@ if (!isset($_SESSION['user'])) {
     <?php
 
     $_SESSION["idFilm"] = $_GET['id'];
+    $_SESSION["nameFilm"] = $_GET['name'];
+    $_SESSION["binFilm"] = $_GET['bin'];
     // echo $_SESSION["idFilm"];
 
     $affichageAlbums = $bdd->prepare('SELECT  album.id, name, isPublic, likes, isDefault FROM ALBUM 
@@ -52,7 +54,7 @@ if (!isset($_SESSION['user'])) {
     ?>
 
 
-    <form action="ajoutFilm.php" method="POST">
+    <form action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
         <label for="pet-select">Ajouter ce film dans l'album : </label>
 
         <select name="film" id="pet-select">

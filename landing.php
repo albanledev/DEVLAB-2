@@ -4,6 +4,9 @@ require_once('config.php');
 if (!isset($_SESSION['user'])) {
     header('Location:index.php');
 }
+
+error_reporting(E_ALL & ~E_NOTICE);
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +31,7 @@ if (!isset($_SESSION['user'])) {
 
 
 
-    <h2 class=" ml-[20px] mt-[20px] font-poppins text-[16px]">Genres</h2>
+    <h2 class=" ml-[20px] mt-[20px] font-poppins text-[30px] font-bold ">Genres</h2>
     <div class="containerGenre  ml-[10px] flex  overflow-x-auto sm:block  id='crudApp'"></div>
 
 
@@ -148,7 +151,11 @@ if (!isset($_SESSION['user'])) {
 
         foreach ($films as $film) {
             if ($film['album_id'] == $album['id']) {
-                echo "<div class='text-purple-700'>" . $film['id_film'] . "</div>";
+                // echo "<div class='text-purple-700'><a href='movie.php?id=" . $film['id_film'] . alt>" . $film['id_film'] . "</a></div>";
+                echo "<a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>";
+
+
+
                 // echo "<a href='movie.php?id='" . $_SESSION['idFilm'] .
                 //     "'>
 
@@ -160,7 +167,7 @@ if (!isset($_SESSION['user'])) {
 
         if ($album['isDefault'] == 0) {
             echo " <form action='delete.php' method='POST'>
-    
+            
             <div class='flex_supp'>
                 <div><input type='hidden' name='supp' value='" . $album['id'] . "'></div>
                 <div><button type='submit' class='py-[3px] px-[15px] rounded-[9px] bg-gray-700 text-white ml-[20px] font-poppins text-[12px]'>Supprimer l'album</button></div><br>

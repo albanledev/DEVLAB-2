@@ -1,10 +1,27 @@
 const containerGenre = document.querySelector('.containerGenre')
+const containerTitre = document.querySelector('.containerTitre')
+
 
 // on récupère ici l'id dans l'url du film
 let queryString = window.location.search;  // Get the query string from the URL
 let params = new URLSearchParams(queryString);  // Create a URLSearchParams object from the query string
 let paramValue = params.get('id');  // Get the value of the 'paramName' query parameter
 console.log(paramValue)
+
+
+
+
+
+
+axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=64f788e08bd9e0a43741986b76b23424&language=en-US`).then(response => {
+    console.log(response.data.genres)
+    response.data.genres.forEach(element => {
+        if(element.id == paramValue){
+            containerTitre.innerHTML = "<h1 class='text-red-500 text-[50px]'>"+element.name+"</h1>" ;
+        }
+    })
+})
+
 
 axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=64f788e08bd9e0a43741986b76b23424&with_genres=${paramValue}`).then(response => {
     // https://api.themoviedb.org/3/discover/movie?api_key=YOUR_API_KEY&with_genres=28
@@ -14,9 +31,11 @@ axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=64f788e08bd9e0a43
 
 
 // let dataArray = [response.data];  // Convert response.data to an array
-
+    console.log(response.data.results.id)
+    // $nomGenre =response.data.results.id
     console.log(response.data.results)
     // console.log(dataArray)
+
     response.data.results.forEach(element => {
         containerGenre.innerHTML +=       `<a href='movie.php?id=${element.id}'><img src="https://image.tmdb.org/t/p/w500${element['poster_path']}" alt=''></a>`
         // +

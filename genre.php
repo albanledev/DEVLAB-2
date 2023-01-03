@@ -20,6 +20,6 @@ if (!isset($_SESSION['user'])) {
 </head>
 
 <body>
-
+    <div class="containerTitre"></div>
     <div class="containerGenre"></div>
 </body>
