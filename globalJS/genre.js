@@ -17,7 +17,7 @@ axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=64f788e08bd9e0a
     console.log(response.data.genres)
     response.data.genres.forEach(element => {
         if(element.id == paramValue){
-            containerTitre.innerHTML = "<h1 class='text-red-500 text-[50px]'>"+element.name+"</h1>" ;
+            containerTitre.innerHTML = "<h1 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] '>"+element.name+"</h1>" ;
         }
     })
 })
@@ -37,7 +37,7 @@ axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=64f788e08bd9e0a43
     // console.log(dataArray)
 
     response.data.results.forEach(element => {
-        containerGenre.innerHTML +=       `<a href='movie.php?id=${element.id}'><img src="https://image.tmdb.org/t/p/w500${element['poster_path']}" alt=''></a>`
+        containerGenre.innerHTML +=       `<a href='movie.php?id=${element.id}'><img class=" p-[4px] object-cover rounded-[10px]" src="https://image.tmdb.org/t/p/w500${element['poster_path']}" alt=''></a>`
         // +
         
         // "<h1 class='font-bold text-red-500 text-[40px]'>" + element.title + '</h1>'   +'<p>'+element.overview+'</p>'

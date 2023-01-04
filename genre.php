@@ -21,5 +21,5 @@ if (!isset($_SESSION['user'])) {
 
 <body>
     <div class="containerTitre"></div>
-    <div class="containerGenre"></div>
+    <div class="containerGenre mx-[20px] mb-[40px] mt-[40px] grid grid-cols-2 overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden"></div>
 </body>

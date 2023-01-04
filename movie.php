@@ -54,8 +54,8 @@ if (!isset($_SESSION['user'])) {
     ?>
 
 
-    <form action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
-        <label for="pet-select">Ajouter ce film dans l'album : </label>
+    <form class="mb-[200px] mt-[20px] ml-[20px]" action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
+        <label class="font-semibold" for="pet-select">Ajouter ce film dans l'album : </label>
 
         <select name="film" id="pet-select">
             <?php
@@ -78,15 +78,15 @@ if (!isset($_SESSION['user'])) {
         }
         ?>
         <br>
-        <button type="submit" class="bg-gray-600 text-white">Ajouter</button>
+        <button type="submit" class="mt-[20px] px-[6px] py-[4px] rounded-[8px] bg-gray-600 text-white">Ajouter</button>
     </form>
 
 
     <?php
 
-    foreach ($albums as $album) {
-        echo "<div class='mb-[80px]'><h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2><h3>" . $album['id'] . "</h3></div>";
-    }
+    // foreach ($albums as $album) {
+    //    echo "<div class='mb-[80px]'><h2 class='text-red-500 font-bold' text-10>" . $album['name'] . "</h2><h3>" . $album['id'] . "</h3></div>";
+    // }
     ?>
 
 
