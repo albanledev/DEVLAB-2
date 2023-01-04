@@ -32,12 +32,12 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
 
-    <h2 class=" ml-[20px] mt-[20px] font-poppins text-[30px] font-bold ">Genres</h2>
-    <div class="containerGenre  ml-[10px] flex  overflow-x-auto sm:block  id='crudApp'"></div>
+    <h2 class=" ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Genres</h2>
+    <div class="containerGenre  ml-[10px] flex  overflow-x-auto lg:overflow-x-hidden id='crudApp'"></div>
 
 
     <h2 class='ml-[20px] mt-[20px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
-    <div class='container ml-[20px] flex overflow-x-auto  md:grid md:grid-cols-6 lg:grid-cols-10 lg:overflow-x-hidden' id='crudApp'></div>
+    <div class='container ml-[20px]  flex overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden' id='crudApp'></div>
 
     <!-- <button id='getBtn'>get Data</button> -->
     <!-- <button id='postBtn'>2</button> -->
@@ -137,9 +137,13 @@ error_reporting(E_ALL & ~E_NOTICE);
     foreach ($albums as $album) {
 
         // Ici on veut afficher que les 2 premiers albums du user, c'est à dire visionnés et listes d'envie
+
         // if ($albums[2] == $album) {
         //     break;
         // }
+
+
+
 
         echo "<br><br>
         <div class='block'>
@@ -151,11 +155,12 @@ error_reporting(E_ALL & ~E_NOTICE);
         } else {
             echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
         }
-
+    ?><div class='flex ml-[20px] overflow-x-auto md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden'>
+        <?php
         foreach ($films as $film) {
             if ($film['album_id'] == $album['id']) {
                 // echo "<div class='text-purple-700'><a href='movie.php?id=" . $film['id_film'] . alt>" . $film['id_film'] . "</a></div>";
-                echo "<a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>";
+                echo "<a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class='ml-[4px] w-[145px] h-[250px] object-cover rounded-[10px] ' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>";
 
 
 
@@ -163,16 +168,16 @@ error_reporting(E_ALL & ~E_NOTICE);
                 //     "'>
 
                 // </a>";
-                echo "<div class='containerListeFilms'></div>";
+                // echo "<div class='containerListeFilms  '></div>";
             }
         }
     }
 
     // require("connexion.php");
 
-    ?>
-    <br>
-    </div>
+        ?>
+        <br>
+        </div>
 
 
 

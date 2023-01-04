@@ -35,7 +35,7 @@ const container = document.querySelector('.container')
 //Version qui marche
             // "<a href='movie.php?id='"+element.id +"'><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/"  + element.poster_path +  "' alt=''></a>" 
 
-            `<a href='movie.php?id=${element.id}&name=${element.title}&bin=${element.poster_path}'><img class='object-cover rounded-[12px]' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
+            `<a href='movie.php?id=${element.id}&name=${element.title}&bin=${element.poster_path}'><img class='object-cover rounded-[10px] ' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
             + 
             // "`https://www.themoviedb.org/t/p/w300_and_h450_bestv2/` + pays.poster_path" alt=""
             "</div>"
