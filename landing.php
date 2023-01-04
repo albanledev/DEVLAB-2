@@ -36,7 +36,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
     <h2 class='ml-[20px] mt-[20px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
-    <div class='container ml-[20px] flex overflow-x-auto  md:grid md:grid-cols-6 lg:grid-cols-10' id='crudApp'></div>
+    <div class='container ml-[20px] flex overflow-x-auto  md:grid md:grid-cols-6 lg:grid-cols-10 lg:overflow-x-hidden' id='crudApp'></div>
 
     <button id='getBtn'>get Data</button>
     <!-- <button id='postBtn'>2</button> -->
@@ -134,9 +134,11 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
     foreach ($albums as $album) {
-        // if $utilisateur
 
-
+        // Ici on veut afficher que les 2 premiers albums du user, c'est à dire visionnés et listes d'envie
+        if ($albums[2] == $album) {
+            break;
+        }
 
         echo "<br><br>
         <div class='block'>
