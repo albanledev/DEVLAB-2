@@ -45,52 +45,14 @@ error_reporting(E_ALL & ~E_NOTICE);
 
     <!-- <script src='axios.js' async></script> -->
 
-    <?php
-    require_once('new_album.php');
-    if (isset($_GET['reg_err'])) {
-        $err = htmlspecialchars($_GET['reg_err']);
-        switch ($err) {
-
-
-            case 'name_length':
-    ?>
-
-                <div class="alert">
-                    <strong>Erreur</strong> taille du nom de l'album invalide
-                </div>
-            <?php
-                break;
-
-            case 'already':
-            ?>
-
-                <div class="alert">
-                    <strong>Erreur</strong>Un des vos albums avec le même nom existe
-                </div>
-    <?php
-                break;
-        }
-    } ?>
+  
 
 
 
 
 
 
-    <form action="new_album.php" method="post" class="mt-[40px]">
-        <fieldset>
-            <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Ajouter un album</h2>
 
-            <input type="text" name="name" placeholder="Nom de l'album" /><br>
-            <div>
-                <select name="public" id="">
-                    <option value="prive">Privé</option>
-                    <option value="publique">Publique</option>
-                </select>
-            </div>
-            <button type="submit" value="Créer" class="bg-gray-200">Créer</button>
-        </fieldset>
-    </form>
 
 
     <?php

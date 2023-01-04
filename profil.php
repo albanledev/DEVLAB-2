@@ -72,6 +72,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
         echo "<br><br>
         <div class='block'>
+        <div class=''>
         <div class='ml-[20px] font-poppins font-semibold text-[16px]'><h3> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
@@ -80,22 +81,6 @@ error_reporting(E_ALL & ~E_NOTICE);
         } else {
             echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
         }
-
-        foreach ($films as $film) {
-            if ($film['album_id'] == $album['id']) {
-                // echo "<div class='text-purple-700'><a href='movie.php?id=" . $film['id_film'] . alt>" . $film['id_film'] . "</a></div>";
-                echo "<div class='ml-4 w-[145px] h-[250px] relative'><a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class='object-cover rounded-[12px]' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a><img src='img/croix.png' alt='delete' class='absolute top-3 right-3 z-10'></div>";
-
-
-
-                // echo "<a href='movie.php?id='" . $_SESSION['idFilm'] .
-                //     "'>
-
-                // </a>";
-                echo "<div class='containerListeFilms'></div>";
-            }
-        }
-
 
         if ($album['isDefault'] == 0) {
             echo " <form action='delete.php' method='POST'>
@@ -106,9 +91,45 @@ error_reporting(E_ALL & ~E_NOTICE);
             </div>
     
     
-            </form>
+            </form></div></div>
         ";
         }
+
+        foreach ($films as $film) {
+            if ($film['album_id'] == $album['id']) {
+                // echo "<div class='text-purple-700'><a href='movie.php?id=" . $film['id_film'] . alt>" . $film['id_film'] . "</a></div>";
+                echo "<div class='ml-4 w-[145px] h-[250px] relative'><a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class='object-cover rounded-[12px]' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>
+
+                
+                 <form action='delete/deleteFilms.php' method='POST'>
+            
+                
+                    <input type='hidden' name='supp' value='" . $film['album_id'] . "'>
+                    <input type='hidden' name='supp2' value='" . $film['id_film'] . "'>
+                    
+                    <input type='image' alt='Submit' src='img/croix.png' class='absolute top-3 right-3 z-10' /><br>
+                
+        
+                
+                </form>
+
+                
+            ";
+
+
+
+                // echo "<img src='img/croix.png' alt='delete' class='absolute top-3 right-3 z-10' /></a></div>";
+
+
+
+                // echo "<a href='movie.php?id='" . $_SESSION['idFilm'] .
+                //     "'>
+
+                // </a>";
+                echo "<div class='containerListeFilms'></div>";
+            }
+        }
+        echo "</div>";
     }
 
     // require("connexion.php");
@@ -116,6 +137,50 @@ error_reporting(E_ALL & ~E_NOTICE);
     ?>
     <br>
     </div>
+
+
+    <?php
+    require_once('new_album.php');
+    if (isset($_GET['reg_err'])) {
+        $err = htmlspecialchars($_GET['reg_err']);
+        switch ($err) {
+
+
+            case 'name_length':
+    ?>
+
+                <div class="alert">
+                    <strong>Erreur</strong> taille du nom de l'album invalide
+                </div>
+            <?php
+                break;
+
+            case 'already':
+            ?>
+
+                <div class="alert">
+                    <strong>Erreur</strong>Un des vos albums avec le même nom existe
+                </div>
+    <?php
+                break;
+        }
+    } ?>
+
+
+    <form action="new_album.php" method="post" class="mt-[40px]">
+        <fieldset>
+            <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Ajouter un album</h2>
+
+            <input type="text" name="name" placeholder="Nom de l'album" /><br>
+            <div>
+                <select name="public" id="">
+                    <option value="prive">Privé</option>
+                    <option value="publique">Publique</option>
+                </select>
+            </div>
+            <button type="submit" value="Créer" class="bg-gray-200">Créer</button>
+        </fieldset>
+    </form>
 
 
 

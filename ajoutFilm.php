@@ -51,6 +51,6 @@ if (isset($_POST['film'])) {
 
 
         ]);
-        header('Location: movie.php?id=' . $_SESSION["idFilm"] . "&name=" . $_SESSION['nameFilm'] . "&bin=" . $_SESSION['binFilm']);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     } else header('Location: movie.php');
 }
