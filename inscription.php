@@ -23,46 +23,52 @@ session_start();
         switch ($err) {
             case 'success';
     ?>
-                <div class="alert">
-                    <strong>Succès</strong> inscription réussie !
+                <div class="alert flex">
+                    <strong class="text-white bg-green-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Succès !</strong>
+                    <p class="font-semibold text-green-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Inscription réussie !</p>
                 </div>
             <?php
                 break;
 
             case 'password';
             ?>
-                <div class="alert">
-                    <strong>Erreur</strong> Mot de passe différent
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Mot de passe différent</p>
                 </div>
             <?php
                 break;
 
             case 'email';
             ?>
-                <div class="alert">
-                    <strong>Erreur</strong> Email non valide
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Email non valide</p>
                 </div>
             <?php
                 break;
 
             case 'email_length';
             ?>
-                <div class="alert">
-                    <strong>Erreur</strong> Email trop long
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Email trop long</p>
                 </div>
             <?php
                 break;
             case 'pseudo_length';
             ?>
-                <div class="alert">
-                    <strong>Erreur</strong> Pseudo trop long
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Pseudo trop long</p>
                 </div>
             <?php
                 break;
             case 'already';
             ?>
-                <div class="alert">
-                    <strong>Erreur</strong> Compte déjà existant
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Compte déjà existant</p>
                 </div>
     <?php
                 break;

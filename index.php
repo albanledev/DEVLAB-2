@@ -26,8 +26,9 @@
             case 'email':
     ?>
 
-                <div class="alert">
-                    <strong>Erreur</strong>Email incorrect
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Email incorrect</p>
                 </div>
             <?php
                 break;
@@ -35,8 +36,9 @@
             case 'already':
             ?>
 
-                <div class="alert">
-                    <strong>Erreur</strong>Compte non existant
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Compte non existant</p>
                 </div>
             <?php
                 break;
@@ -44,8 +46,9 @@
             case 'password':
             ?>
 
-                <div class="alert">
-                    <strong>Erreur</strong> mot de passe incorrect
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Mot de passe incorrect</p>
                 </div>
     <?php
                 break;
