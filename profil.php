@@ -149,8 +149,9 @@ error_reporting(E_ALL & ~E_NOTICE);
             case 'name_length':
     ?>
 
-                <div class="alert">
-                    <strong>Erreur</strong> taille du nom de l'album invalide
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">taille du nom de l'album invalide</p>
                 </div>
             <?php
                 break;
@@ -158,8 +159,9 @@ error_reporting(E_ALL & ~E_NOTICE);
             case 'already':
             ?>
 
-                <div class="alert">
-                    <strong>Erreur</strong>Un des vos albums avec le même nom existe
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Un des vos albums avec le même nom existe !</p>
                 </div>
     <?php
                 break;

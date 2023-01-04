@@ -45,7 +45,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
     <!-- <script src='axios.js' async></script> -->
 
-  
+
 
 
 
@@ -117,12 +117,11 @@ error_reporting(E_ALL & ~E_NOTICE);
         } else {
             echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
         }
-    ?><div class='flex ml-[20px] overflow-x-auto md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden'>
-        <?php
+
         foreach ($films as $film) {
             if ($film['album_id'] == $album['id']) {
                 // echo "<div class='text-purple-700'><a href='movie.php?id=" . $film['id_film'] . alt>" . $film['id_film'] . "</a></div>";
-                echo "<a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class='ml-[4px] w-[145px] h-[250px] object-cover rounded-[10px] ' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>";
+                echo "<a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class=' ml-[4px] p-[4px] object-cover rounded-[10px] w-[145px] h-[250px] ' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>";
 
 
 
@@ -137,9 +136,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 
     // require("connexion.php");
 
-        ?>
-        <br>
-        </div>
+    ?>
+    <br>
+
 
 
 
