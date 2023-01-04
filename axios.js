@@ -70,19 +70,3 @@ const container = document.querySelector('.container')
 
 
     
-        // const containerListeFilms = document.querySelector('.containerListeFilms')
-        // axios.get('https://api.themoviedb.org/3/discover/movie?api_key=64f788e08bd9e0a43741986b76b23424&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate').then(response => {
-        //     let dataArray = [response.data]
-        //     console.log(response.data.results)
-        //     // console.log(dataArray[0])
-        //     response.data.results.forEach(element => {
-        
-        //         containerListeFilms.innerHTML = " <div class='px-[10px] mt-[20px]'>" +
-        //         `<a href='movie.php?id=${element.id}'>lalal</a>` + 
-        //         // `<a href='movie.php?id=${element.id}'><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
-        
-        //         "</div>"
-        
-        //     });
-        
-        // })
