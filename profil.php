@@ -87,7 +87,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             
             <div class='flex_supp'>
                 <div><input type='hidden' name='supp' value='" . $album['id'] . "'></div>
-                <div><button type='submit' class='py-[3px] px-[15px] rounded-[9px] bg-gray-700 text-white ml-[20px] font-poppins text-[12px]'>Supprimer l'album</button></div><br>
+                <div><button type='submit' class='py-[3px] px-[15px] rounded-[9px] bg-gray-700 text-white ml-[20px] font-poppins text-[12px]'>Supprimer l'album " . $album['name'] . "</button></div><br>
             </div>
     
     
