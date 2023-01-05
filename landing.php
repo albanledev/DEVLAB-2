@@ -35,6 +35,9 @@ error_reporting(E_ALL & ~E_NOTICE);
     <h2 class=" ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Genres</h2>
     <div class="containerGenre  ml-[10px] flex  overflow-x-auto lg:overflow-x-hidden id='crudApp'"></div>
 
+    <input id="search-input" type="text" class="bg-gray-300 rounded-xl pl-2 ml-4">
+    <div class='movieSearch'></div>
+
 
     <h2 class='ml-[20px] mt-[20px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
     <div class='container ml-[20px]  flex overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden' id='crudApp'></div>
