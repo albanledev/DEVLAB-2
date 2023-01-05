@@ -46,9 +46,9 @@ if (isset($_POST['pseudo']) && isset($_POST['email']) && isset($_POST['password'
 
                         $_SESSION['user'] = $data['pseudo'];
                         header('Location:index.php');
-                    } else header('Location: index.php?reg_err=password');
-                } else header('Location: index.php?reg_err=email');
-            } else header('Location: index.php?reg_err=email_length');
-        } else header('Location: index.php?reg_err=pseudo_length');
-    } else header('Location: index.php?reg_err=already');
+                    } else header('Location: inscription.php?reg_err=password');
+                } else header('Location: inscription.php?reg_err=email');
+            } else header('Location: inscription.php?reg_err=email_length');
+        } else header('Location: inscription.php?reg_err=pseudo_length');
+    } else header('Location: inscription.php?reg_err=already');
 }

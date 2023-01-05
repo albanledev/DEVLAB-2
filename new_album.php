@@ -77,7 +77,7 @@ if (isset($_POST['name']) && isset($_POST['public'])) {
 
 
             // $_SESSION['user'] = $data['pseudo'];
-            header('Location:landing.php');
-        } else header('Location: landing.php?reg_err=name_length');
-    } else header('Location: landing.php?reg_err=already');
+            header('Location:profil.php');
+        } else header('Location: profil.php?reg_err=name_length');
+    } else header('Location: profil.php?reg_err=already');
 }
