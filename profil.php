@@ -26,17 +26,17 @@ error_reporting(E_ALL & ~E_NOTICE);
     <title>Bonjour</title>
 </head>
 
-<body>
+<body class="bg-gray-800">
     <header>
-        <div class="py-[20px] text-white  hidden place-content-around bg-gray-900 w-[100%] sm:flex">
+        <div class="py-[20px] text-white  hidden place-content-around bg-gray-800 w-[100%] sm:flex">
             <a class="flex hover:text-gray-300" href="profil.php"> <img class="w-[25px] h-[25px]" src="img/profile.png" alt=""><p class="ml-[10px]">profil</p> </a>
             <a class="flex hover:text-gray-300" href="landing.php"><img class="w-[25px] h-[25px]" src="img/home.png" alt=""><p class="ml-[10px]">accueil</p></a>
             <a class="flex hover:text-gray-300" href="#"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt=""><p class="ml-[10px]">recherche</p></a>
             <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt=""><p class="ml-[10px]">invitations</p></a>
         </div>
     </header>
-    <a href="deconnexion.php" class="flex justify-end pr-2 pt-2"><button>Déconnexion</button></a>
-    <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
+    <div class="flex justify-end"><a href="deconnexion.php" class=" mt-[20px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
+    <h1 class="mt-[20px] text-center font-poppins text-white font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
 
 
@@ -80,7 +80,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
         echo "<br><br>
         <div class=''>
-        <div class='ml-[20px] font-poppins font-semibold text-[16px]'><h3> " . $album['name'] . "</h3></div>
+        <div class='flex text-white ml-[20px] font-poppins font-semibold text-[16px]'><img class='w-[20px] h-[20px] mr-[10px]' src='img/heart-full.png' alt='heart'><h3> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
         if ($album['isPublic'] == 0) {
@@ -176,18 +176,18 @@ error_reporting(E_ALL & ~E_NOTICE);
     } ?>
 
 
-    <form action="new_album.php" method="post" class="mt-[40px]">
+    <form action="new_album.php" method="post" class="flex justify-center">
         <fieldset>
-            <h2 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[16px]'>Ajouter un album</h2>
+            <h2 class='text-white text-center mb-[20px] mt-[100px] font-poppins font-semibold text-[16px]'>Ajouter un album</h2>
 
-            <input type="text" name="name" placeholder="Nom de l'album" /><br>
+            <input class="p-1 px-16 py-2 text-center rounded-[9px] border-2" type="text" name="name" placeholder="Nom de l'album" /><br>
             <div>
-                <select name="public" id="">
+                <select class="rounded-[9px] my-[10px] text-center" name="public" id="">
                     <option value="prive">Privé</option>
                     <option value="publique">Publique</option>
                 </select>
             </div>
-            <button type="submit" value="Créer" class="bg-gray-200">Créer</button>
+            <button type="submit" value="Créer" class="mt-[20px] text-white bg-orange-500 px-16 py-2 rounded-[9px]">Créer</button>
         </fieldset>
     </form>
 

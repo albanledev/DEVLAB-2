@@ -56,7 +56,6 @@ if (!isset($_SESSION['user'])) {
     // echo '</pre>';
     ?>
 
-
     <form class="mb-[200px] mt-[20px] ml-[20px]" action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
         <label class="font-semibold" for="pet-select">Ajouter ce film dans l'album : </label>
 
