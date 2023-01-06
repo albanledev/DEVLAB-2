@@ -30,11 +30,7 @@ if (!isset($_SESSION['user'])) {
             <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt=""><p class="ml-[10px]">invitations</p></a>
         </div>
     </header>
-
     <div class="containerMovie"></div>
-
-
-
     <?php
 
     $_SESSION["idFilm"] = $_GET['id'];
@@ -49,7 +45,6 @@ if (!isset($_SESSION['user'])) {
         [
             'users_id' => $_SESSION['id']
         ]
-
     );
     $albums = $affichageAlbums->fetchAll();
     // echo "<pre>";
