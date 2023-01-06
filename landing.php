@@ -28,11 +28,22 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 <body class='overflow-x-hidden bg-gray-800'>
     <header>
-        <div class="py-[20px] text-white  hidden place-content-around bg-gray-00 w-[100%] sm:flex">
-            <a class="flex hover:text-gray-300" href="profil.php"> <img class="w-[25px] h-[25px]" src="img/profile.png" alt=""><p class="ml-[10px]">profil</p> </a>
-            <a class="flex hover:text-gray-300" href="landing.php"><img class="w-[25px] h-[25px]" src="img/home.png" alt=""><p class="ml-[10px]">accueil</p></a>
-            <a class="flex hover:text-gray-300" href="#"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt=""><p class="ml-[10px]">recherche</p></a>
-            <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt=""><p class="ml-[10px]">invitations</p></a>
+
+        <div class="py-[20px] text-white  hidden place-content-around bg-gray-900 w-[100%] sm:flex">
+
+            <a class="flex hover:text-gray-300" href="profil.php"> <img class="w-[25px] h-[25px]" src="img/profile.png" alt="">
+                <p class="ml-[10px]">profil</p>
+            </a>
+            <a class="flex hover:text-gray-300" href="landing.php"><img class="w-[25px] h-[25px]" src="img/home.png" alt="">
+                <p class="ml-[10px]">accueil</p>
+            </a>
+            <a class="flex hover:text-gray-300" href="#"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt="">
+                <p class="ml-[10px]">recherche</p>
+            </a>
+            <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt="">
+                <p class="ml-[10px]">invitations</p>
+            </a>
+
         </div>
     </header>
     <a href="deconnexion.php" class="text-white flex justify-end pr-2 pt-2"><button>Déconnexion</button></a>
@@ -42,6 +53,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 
     <h2 class="text-white ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Genres</h2>
     <div class="containerGenre text-white ml-[10px] flex  overflow-x-auto lg:overflow-x-hidden id='crudApp'"></div>
+
+    <input id="search-input" type="text" class="bg-gray-300 rounded-xl pl-2 ml-4">
+    <div class='movieSearch'></div>
 
 
     <h2 class='text-white ml-[20px] mt-[20px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
@@ -145,8 +159,8 @@ error_reporting(E_ALL & ~E_NOTICE);
     // require("connexion.php");
 
 
-        ?>
-        <br>
+    ?>
+    <br>
     <div class="h-[100px]"></div>
     <footer>
         <div class="py-[20px] text-white  flex place-content-around bg-gray-800 fixed bottom-0 w-[100%] sm:hidden">
@@ -158,5 +172,5 @@ error_reporting(E_ALL & ~E_NOTICE);
     </footer>
 
 </body>
-
+    
 </html>
