@@ -44,7 +44,7 @@ error_reporting(E_ALL & ~E_NOTICE);
         </div>
     </header>
 
-    <a href="deconnexion.php" class="flex justify-end pr-2 pt-2"><button>Déconnexion</button></a>
+    <div class="flex justify-end"><a href="deconnexion.php" class=" mt-[20px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
     <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px] ">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
 

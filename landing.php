@@ -46,13 +46,13 @@ error_reporting(E_ALL & ~E_NOTICE);
 
         </div>
     </header>
-    <a href="deconnexion.php" class="text-white flex justify-end pr-2 pt-2"><button>Déconnexion</button></a>
+    <div class="flex justify-end"><a href="deconnexion.php" class=" mt-[20px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
     <h1 class="text-white mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
 
 
     <h2 class="text-white ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Genres</h2>
-    <div class="containerGenre text-white ml-[10px] flex  overflow-x-auto lg:overflow-x-hidden id='crudApp'"></div>
+    <div class="containerGenre text-white ml-[10px]   overflow-x-auto md:grid md:grid-cols-4 md:justify-items-center lg:overflow-x-hidden id='crudApp'"></div>
 
 
 
