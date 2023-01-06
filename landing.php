@@ -54,8 +54,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <h2 class="text-white ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Genres</h2>
     <div class="containerGenre text-white ml-[10px] flex  overflow-x-auto lg:overflow-x-hidden id='crudApp'"></div>
 
-    <input id="search-input" type="text" class="bg-gray-300 rounded-xl pl-2 ml-4">
-    <div class='movieSearch'></div>
+
 
 
     <h2 class='text-white ml-[20px] mt-[20px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
@@ -172,5 +171,5 @@ error_reporting(E_ALL & ~E_NOTICE);
     </footer>
 
 </body>
-    
+
 </html>
