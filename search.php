@@ -26,7 +26,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <title>Bonjour</title>
 </head>
 
-<body>
+<body class='bg-gray-800'>
     <header>
         <div class="pt-[20px] text-white  hidden place-content-around bg-gray-900 w-[100%] sm:flex">
             <a class="flex hover:text-gray-300" href="profil.php"> <img class="w-[25px] h-[25px]" src="img/profile.png" alt="">
@@ -52,9 +52,10 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
 
-
-    <input id="searchbar" type="text" class='bg-gray-500'>
-    <ul id="submenu"></ul>
+    <div class="flex justify-center">
+        <input id="searchbar" type="text" class='rounded-[25px] w-[80vw] h-8 outline-none mt-[120px]'>
+    </div>
+    <ul id="submenu" class="ml-[10vw] mt-5"></ul>
 
 </body>
 

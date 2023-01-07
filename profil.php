@@ -5,8 +5,8 @@ if (!isset($_SESSION['user'])) {
     header('Location:index.php');
 }
 
-error_reporting(E_ALL & ~E_NOTICE);
-
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+// error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_USER_WARNING & ~E_USER_NOTICE & ~E_DEPRECATED & ~E_USER_DEPRECATED);
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script src='axios.js' async></script> -->
+    <script src='globalJS/profil.js' async></script>
 
     <link href="dist/output.css" rel="stylesheet">
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -54,7 +54,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     <?php
 
 
-    $affichageAlbums = $bdd->prepare('SELECT  album.id, name, isPublic, likes, isDefault FROM ALBUM 
+    $affichageAlbums = $bdd->prepare('SELECT  users_id,album.id, name, isPublic, likes, isDefault FROM ALBUM 
     JOIN users_album ON album.id = album_id
     JOIN users ON users.id = users_id WHERE users_id = :users_id');
     $affichageAlbums->execute(
@@ -84,24 +84,64 @@ error_reporting(E_ALL & ~E_NOTICE);
     // echo "</pre>";
 
 
+    // <img class='w-[20px] h-[20px] mr-[10px]' src='img/heart.png' alt='heart'>
+    // 
+
+    // echo $_SESSION['id'];
+
+
+    $affichageCoeurs = $bdd->prepare('SELECT  * FROM ALBUM 
+    JOIN coeurs ON album.id = album_id
+    WHERE users_id = :users_id
+');
+    $affichageCoeurs->execute(
+        [
+            'users_id' => $_SESSION['id']
+        ]
+
+    );
+    $Coeurs = $affichageCoeurs->fetchAll();
+    // echo "<pre>";
+    // print_r($Coeurs);
+    // echo "</pre>";
+
+
+
+    $i = 0;
     foreach ($albums as $album) {
-
+        // $_SESSION['id'] == $Coeurs[$i]['users_id']
+        // $album['id'] == $Coeurs[$i]['album_id'] &&
         // Ici on veut afficher que les 2 premiers albums du user, c'est à dire visionnés et listes d'envie
-
-
-        echo "<br><br>
+        // foreach($Coeurs as $coeur){}
+        if ($album['likes'] > 0) {
+            echo "<br><br>
         <div class=''>
-        <div class='flex text-white ml-[20px] font-poppins font-semibold text-[16px]'><img class='w-[20px] h-[20px] mr-[10px]' src='img/heart-full.png' alt='heart'><h3> " . $album['name'] . "</h3></div>
+        <div class='flex text-white ml-[20px] font-poppins font-semibold text-[16px]'>
+        <button id='my-button'>
+        
+
+
+
+        <form action='ajoutCoeurs.php' method='POST'>
+            
+                
+        <input type='hidden' name='albumId' value='" . $album['id'] . "'>
+        <input type='hidden' name='albumUsersId' value='" . $album['users_id'] . "'>
+        
+        <input type='image' alt='Submit' src='img/heart-full.png' class='w-[20px] h-[20px] mr-[10px]' />
+
+    </form>
+        </button><h3> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
-        if ($album['isPublic'] == 0) {
-            echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>publique</p>";
-        } else {
-            echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
-        }
+            if ($album['isPublic'] == 0) {
+                echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>publique</p>";
+            } else {
+                echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
+            }
 
-        if ($album['isDefault'] == 0) {
-            echo " <form action='delete.php' method='POST'>
+            if ($album['isDefault'] == 0) {
+                echo " <form action='delete.php' method='POST'>
             
             <div class='flex_supp'>
                 <div><input type='hidden' name='supp' value='" . $album['id'] . "'></div>
@@ -111,7 +151,71 @@ error_reporting(E_ALL & ~E_NOTICE);
     
             </form></div>
         ";
+            }
+        } else {
+            echo "<br><br>
+        <div class=''>
+        <div class='flex text-white ml-[20px] font-poppins font-semibold text-[16px]'>
+        <button id='my-button'>
+        
+
+
+
+        <form action='ajoutCoeurs.php' method='POST'>
+            
+                
+        <input type='hidden' name='albumId' value='" . $album['id'] . "'>
+        <input type='hidden' name='albumUsersId' value='" . $album['users_id'] . "'>
+        
+        <input type='image' alt='Submit' src='img/heart.png' class='w-[20px] h-[20px] mr-[10px]' />
+
+    </form>
+        </button><h3> " . $album['name'] . "</h3></div>
+        <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
+        ";
+            if ($album['isPublic'] == 0) {
+                echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>publique</p>";
+            } else {
+                echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
+            }
+
+            if ($album['isDefault'] == 0) {
+                echo " <form action='delete.php' method='POST'>
+            
+            <div class='flex_supp'>
+                <div><input type='hidden' name='supp' value='" . $album['id'] . "'></div>
+                <div><button type='submit' class='py-[3px] px-[15px] rounded-[9px] bg-gray-700 text-white ml-[20px] font-poppins text-[12px]'>Supprimer l'album " . $album['name'] . "</button></div><br>
+            </div>
+    
+    
+            </form></div>
+        ";
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         foreach ($films as $film) {
             if ($film['album_id'] == $album['id']) {
@@ -148,6 +252,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             }
         }
         echo "</div>";
+        $i = $i + 1;
     }
 
     // require("connexion.php");
