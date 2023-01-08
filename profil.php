@@ -35,7 +35,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt=""><p class="ml-[10px]">invitations</p></a>
         </div>
     </header>
-    <div class="flex justify-end"><a href="deconnexion.php" class=" mt-[20px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
+    <div class="flex justify-end"><a href="deconnexion.php" class=" mt-[20px] mr-[40px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
     <h1 class="mt-[20px] text-center font-poppins text-white font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
 
