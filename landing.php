@@ -29,7 +29,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 <body class='overflow-x-hidden bg-gray-800 overflow-x'>
     <header>
 
-        <div class="pt-[20px] text-white  hidden place-content-around bg-gray-900 w-[100%] sm:flex  sm:justify-items-center">
+        <div class="pt-[20px] text-white  hidden place-content-around bg-gray-800 w-[100%] sm:flex  sm:justify-items-center">
 
             <a class="flex hover:text-gray-300" href="profil.php"> <img class="w-[25px] h-[25px]" src="img/profile.png" alt="">
                 <p class="ml-[15px]">profil</p>
