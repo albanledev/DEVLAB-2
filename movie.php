@@ -42,7 +42,7 @@ if (!isset($_SESSION['user'])) {
         </div>
     </header>
     <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
-        <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
+        <img class="w-[25px] h-[25px]" src="img/power.png" alt="power">
     </a>
     <div class="containerMovie"></div>
     <?php
@@ -68,6 +68,9 @@ if (!isset($_SESSION['user'])) {
     // echo '<pre>';
     // print_r($albums);
     // echo '</pre>';
+
+
+    
     ?>
 
     <form class="mb-[200px] mt-[20px] ml-[20px]" action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
@@ -117,10 +120,9 @@ if (!isset($_SESSION['user'])) {
             case 'already':
     ?>
 
-                <div class="alert">
-                    <strong>Erreur</strong>Vous ne pouvez pas mettre 2 fois le film dans le même album
-
-
+                <div class="alert flex">
+                    <strong class="text-white bg-red-600 px-[8px] py-[4px] rounded-[8px] mx-[20px] my-[20px] ">Erreur</strong>
+                    <p class="font-semibold text-red-500 px-[8px] py-[4px] rounded-[8px] my-[20px] ">Vous ne pouvez pas mettre 2 fois le film dans le même album</p>
                 </div>
     <?php
                 break;

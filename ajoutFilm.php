@@ -52,5 +52,5 @@ if (isset($_POST['film'])) {
 
         ]);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
-    } else header('Location: movie.php');
+    } else header('Location: ' . $_SERVER['HTTP_REFERER'] . "?reg_err=already");
 }

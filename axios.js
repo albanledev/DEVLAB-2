@@ -27,7 +27,7 @@ const container = document.querySelector('.container')
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=64f788e08bd9e0a43741986b76b23424&language=en-US&page=1').then(response => {
         console.log(response.data.results)
         response.data.results.forEach(element => {
-
+            
             container.innerHTML += "<div class=''> <div class=' w-[145px] h-[250px] '>" +
 
 

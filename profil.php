@@ -47,7 +47,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
         </div>
     </header>
     <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
-        <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
+        <img class="w-[25px] h-[25px]" src="img/power.png" alt="power">
     </a>
 
 
@@ -116,8 +116,12 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
         // $_SESSION['id'] == $Coeurs[$i]['users_id']
         // $album['id'] == $Coeurs[$i]['album_id'] &&
         // Ici on veut afficher que les 2 premiers albums du user, c'est à dire visionnés et listes d'envie
-        // foreach($Coeurs as $coeur){}
-        if ($album['likes'] > 0) {
+        foreach ($Coeurs as $coeur) {
+            if ($coeur['album_id'] == $album['id']) {
+                break;
+            }
+        }
+        if ($coeur['album_id'] == $album['id']) {
             echo "<br><br>
         <div class=''>
         <div class='flex text-white ml-[20px] font-poppins font-semibold text-[16px]'>
