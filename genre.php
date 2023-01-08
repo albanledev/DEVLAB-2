@@ -39,10 +39,9 @@ if (!isset($_SESSION['user'])) {
             </a>
         </div>
     </header>
-    <div class='flex justify-end sm:hidden'><a href="deconnexion.php" class="  text-white bg-orange-500 px-5 p-2 rounded-[16px] mt-3 mr-5">
-            <p>Déconnexion</p>
-        </a>
-    </div>
+    <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
+        <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
+    </a>
     <div class="containerTitre text-white"></div>
     <div class="containerGenre mx-[20px] mb-[40px] mt-[40px] grid grid-cols-2 overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden"></div>
 

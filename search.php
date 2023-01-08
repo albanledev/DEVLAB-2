@@ -46,15 +46,15 @@ error_reporting(E_ALL & ~E_NOTICE);
             </a>
         </div>
     </header>
-
-    <div class="flex justify-end sm:hidden"><a href="deconnexion.php" class=" mt-[20px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
-    <!-- <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px] ">Bonjour <?php echo $_SESSION['user']; ?></h1> -->
+    <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
+        <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
+    </a> <!-- <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px] ">Bonjour <?php echo $_SESSION['user']; ?></h1> -->
 
 
 
     <div class="flex justify-center mt-[150px] ">
         <img class="w-[25px] h-[25px] mr-[20px]" src="img/loupe%20(1).png" alt="loupe">
-        <input id="searchbar" type="text" class='px-16 py-1 rounded-[9px] border-2' placeholder="Rechercher un film...">
+        <input id="searchbar" type="text" class='px-8 sm:px-16 py-1 rounded-[9px] border-2' placeholder="Rechercher un film...">
         <!-- <img src='img/loupe (1).png' alt='Rechercher un film' class='absolute right-4 top-4'> -->
     </div>
     <ul id="submenu" class="ml-[35vw] mt-5"></ul>

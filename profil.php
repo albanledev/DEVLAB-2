@@ -46,6 +46,9 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
             </a>
         </div>
     </header>
+    <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
+        <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
+    </a>
 
 
     <h1 class="mt-[50px] text-center font-poppins text-white font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>

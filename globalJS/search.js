@@ -25,7 +25,7 @@
                         for (let i = 0; i <= 4; i++) {
                             let resultat = document.createElement("li");
                             let myLink = "movie.php?id="+movie[i].id+"&name=" + encodeURIComponent(movie[i].title) + "&bin=" + movie[i]['poster_path']
-                            resultat.innerHTML = "<div class='flex'><img class='w-auto h-[50px]'src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2"+ movie[i].poster_path+"' alt>"+ "<div>                    <p class='text-white ml-5 mt-3'><a href="+myLink+">"+movie[i].original_title+"</a></p></div></div>"
+                            resultat.innerHTML = "<div class='flex'><img class='w-auto h-[50px]'src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2"+ movie[i].poster_path+"' alt>"+ "<div>                    <p class='text-white ease-in-out duration-300 hover:text-gray-500 ml-5 mt-3'><a href="+myLink+">"+movie[i].original_title+"</a></p></div></div>"
                             propositions.appendChild(resultat);
                         }   
                     })

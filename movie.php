@@ -36,8 +36,14 @@ if (!isset($_SESSION['user'])) {
             <a class="flex ease-in-out duration-300 hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt="">
                 <p class="ml-[10px]">invitations</p>
             </a>
+            <a href="deconnexion.php" class="  text-white bg-orange-500 px-5 p-2 rounded-[16px] -translate-y-2">
+                <p>Déconnexion</p>
+            </a>
         </div>
     </header>
+    <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
+        <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
+    </a>
     <div class="containerMovie"></div>
     <?php
 
