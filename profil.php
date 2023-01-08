@@ -35,7 +35,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
             <a class="flex hover:text-gray-300" href="landing.php"><img class="w-[25px] h-[25px]" src="img/home.png" alt="">
                 <p class="ml-[10px]">accueil</p>
             </a>
-            <a class="flex hover:text-gray-300" href="#"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt="">
+            <a class="flex hover:text-gray-300" href="search.php"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt="">
                 <p class="ml-[10px]">recherche</p>
             </a>
             <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt="">
@@ -131,7 +131,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
         <input type='image' alt='Submit' src='img/heart-full.png' class='w-[20px] h-[20px] mr-[10px]' />
 
     </form>
-        </button><h3> " . $album['name'] . "</h3></div>
+        </button><h3 class='text-white'> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
             if ($album['isPublic'] == 0) {
@@ -170,7 +170,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
         <input type='image' alt='Submit' src='img/heart.png' class='w-[20px] h-[20px] mr-[10px]' />
 
     </form>
-        </button><h3> " . $album['name'] . "</h3></div>
+        </button><h3 class='text-white'> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
             if ($album['isPublic'] == 0) {
@@ -216,11 +216,11 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 
 
-
+        echo "<div class='flex flex-wrap gap-3 ml-5 mt-5'>";
         foreach ($films as $film) {
             if ($film['album_id'] == $album['id']) {
                 // echo "<div class='text-purple-700'><a href='movie.php?id=" . $film['id_film'] . alt>" . $film['id_film'] . "</a></div>";
-                echo "<div class='ml-4 w-[145px] h-[250px] relative'><a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class='object-cover rounded-[12px]' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>
+                echo " <div class='w-[145px] h-[250px] relative'><a href='movie.php?id=" . $film['id_film'] . "&name=" . $film['name'] . "&bin=" . $film['bin'] . "' alt><img class='object-cover rounded-[12px]' src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2" . $film['bin'] . "'/></a>
 
                 
                  <form action='delete/deleteFilms.php' method='POST'>
@@ -248,9 +248,14 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
                 //     "'>
 
                 // </a>";
+                echo "</div>";
+
+
                 echo "<div class='containerListeFilms'></div>";
             }
         }
+        // echo "</div>";
+        // echo "</div>";
         echo "</div>";
         $i = $i + 1;
     }
@@ -314,7 +319,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
         <div class="py-[20px] text-white  flex place-content-around bg-gray-900 fixed bottom-0 w-[100%] sm:hidden">
             <a class="flex hover:text-gray-300" href="profil.php"> <img class="w-[25px] h-[25px]" src="img/profile.png" alt=""> </a>
             <a class="flex hover:text-gray-300" href="landing.php"><img class="w-[25px] h-[25px]" src="img/home.png" alt=""></a>
-            <a class="flex hover:text-gray-300" href="#"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt=""></a>
+            <a class="flex hover:text-gray-300" href="search.php"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt=""></a>
             <a class="flex hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt=""></a>
         </div>
     </footer>

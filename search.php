@@ -48,14 +48,15 @@ error_reporting(E_ALL & ~E_NOTICE);
     </header>
 
     <div class="flex justify-end sm:hidden"><a href="deconnexion.php" class=" mt-[20px] text-white bg-orange-500 px-10 py-2 rounded-[9px] justify-end"><button>Déconnexion</button></a></div>
-    <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px] ">Bonjour <?php echo $_SESSION['user']; ?></h1>
+    <!-- <h1 class="mt-[20px] text-center font-poppins font-semibold text-[20px] ">Bonjour <?php echo $_SESSION['user']; ?></h1> -->
 
 
 
-    <div class="flex justify-center">
-        <input id="searchbar" type="text" class='rounded-[25px] w-[80vw] h-8 outline-none mt-[120px]'>
+    <div class="flex justify-center relative">
+        <input id="searchbar" type="text" class='rounded-[5px] px-4 py-4 w-[30vw] h-8 outline-none border-black border-3 mt-[120px]' placeholder="Rechercher un film...">
+        <!-- <img src='img/loupe (1).png' alt='Rechercher un film' class='absolute right-4 top-4'> -->
     </div>
-    <ul id="submenu" class="ml-[10vw] mt-5"></ul>
+    <ul id="submenu" class="ml-[35vw] mt-5"></ul>
 
 </body>
 
