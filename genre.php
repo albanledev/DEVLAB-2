@@ -42,8 +42,8 @@ if (!isset($_SESSION['user'])) {
     <a href="deconnexion.php" class="sm:hidden flex justify-end mr-[30px] mt-[20px] ">
         <img  class="w-[25px] h-[25px]" src="img/power.png" alt="power">
     </a>
-    <div class="containerTitre text-white"></div>
-    <div class="containerGenre mx-[20px] mb-[40px] mt-[40px] grid grid-cols-2 overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden"></div>
+    <div class="containerTitre text-[20px] text-orange-500"></div>
+    <div class="containerGenre mx-[20px] mb-[40px] mt-[40px] grid grid-cols-2 sm:grid-cols-3 overflow-x-auto md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 md:overflow-x-hidden"></div>
 
     <div class="h-[100px]"></div>
     <footer>

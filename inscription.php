@@ -13,7 +13,7 @@ session_start();
     <title>Document</title>
 </head>
 
-<body>
+<body class="bg-gray-800">
 
 
     <?php
@@ -77,7 +77,7 @@ session_start();
     ?>
 
     <form class="text-center" action="inscription_traitement.php" method="post">
-        <h2 class="mt-[110px] mb-[50px] text-center font-poppins font-semibold text-[20px]">S'inscrire</h2>
+        <h2 class="text-white mt-[110px] mb-[50px] text-center font-poppins font-semibold text-[20px]">S'inscrire</h2>
         <div class="pt-[22px] px-[22px] form-group">
             <input type="text" name="pseudo" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Pseudo" required>
         </div>
@@ -90,7 +90,7 @@ session_start();
         <div class="p-[22px] form-group">
             <input type="password" name="password2" class="p-1 px-16 py-2 rounded-[9px] border-2 form-control" placeholder="Confirmer le mot de passe" required>
         </div>
-        <p class="text-center mb-[22px] text-[12px]">Vous êtes déjà inscrit ? <a class="text-[12px] font-poppins font-semibold " href="index.php">S'identifier</a></p>
+        <p class="text-white text-center mb-[22px] text-[12px]">Vous êtes déjà inscrit ? <a class="text-orange-500 text-[12px] font-poppins font-semibold " href="index.php">S'identifier</a></p>
         <div class="form-group">
             <button class=" text-white bg-gray-700 px-16 py-2 rounded-[9px]" type="submit">S'inscrire</button>
         </div>

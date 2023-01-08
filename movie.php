@@ -73,10 +73,10 @@ if (!isset($_SESSION['user'])) {
     
     ?>
 
-    <form class="mb-[200px] mt-[20px] ml-[20px]" action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
-        <label class="font-semibold" for="pet-select">Ajouter ce film dans l'album : </label>
+    <form class="mt-[70px] mx-auto w-[300px]" action="ajoutFilm.php" method="POST" enctype="multipart/form-data">
+        <label class="text-white text-center mb-[20px] mt-[100px] font-poppins font-semibold text-[16px]" for="pet-select">Ajouter ce film dans l'album : </label>
 
-        <select name="film" id="pet-select">
+        <select class="rounded-[9px] my-[10px] text-center" name="film" id="pet-select">
             <?php
 
             foreach ($albums as $album) {
@@ -97,7 +97,7 @@ if (!isset($_SESSION['user'])) {
         }
         ?>
         <br>
-        <button type="submit" class="mt-[20px] px-[6px] py-[4px] rounded-[8px] bg-gray-600 text-white">Ajouter</button>
+        <button type="submit" class="mt-[20px] text-white bg-orange-500 px-16 py-2 rounded-[9px]">Ajouter</button>
     </form>
 
 

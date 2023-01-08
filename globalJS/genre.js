@@ -17,7 +17,7 @@ axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=64f788e08bd9e0a
     console.log(response.data.genres)
     response.data.genres.forEach(element => {
         if(element.id == paramValue){
-            containerTitre.innerHTML = "<h1 class='ml-[20px] mt-[20px] font-poppins font-semibold text-[30px] '>"+element.name+"</h1>" ;
+            containerTitre.innerHTML = "<h1 class='text-center lg:text-left lg:ml-[20px] mt-[20px] font-poppins font-semibold text-[20px] '>"+element.name+"</h1>" ;
         }
     })
 })

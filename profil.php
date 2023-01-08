@@ -178,7 +178,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
         <input type='image' alt='Submit' src='img/heart.png' class='w-[20px] h-[20px] mr-[10px]' />
 
     </form>
-        </button><h3 class='text-white'> " . $album['name'] . "</h3></div>
+        </button><h3 class='text-orange-500'> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
             if ($album['isPublic'] == 0) {
