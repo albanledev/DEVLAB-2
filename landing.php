@@ -53,7 +53,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             <p>Déconnexion</p>
         </a>
     </div>
-    <h1 class="text-white mt-[20px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
+    <h1 class="text-white mt-[50px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
 
 

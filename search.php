@@ -52,8 +52,9 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
 
-    <div class="flex justify-center relative">
-        <input id="searchbar" type="text" class='rounded-[5px] px-4 py-4 w-[30vw] h-8 outline-none border-black border-3 mt-[120px]' placeholder="Rechercher un film...">
+    <div class="flex justify-center mt-[150px] ">
+        <img class="w-[25px] h-[25px] mr-[20px]" src="img/loupe%20(1).png" alt="loupe">
+        <input id="searchbar" type="text" class='px-16 py-1 rounded-[9px] border-2' placeholder="Rechercher un film...">
         <!-- <img src='img/loupe (1).png' alt='Rechercher un film' class='absolute right-4 top-4'> -->
     </div>
     <ul id="submenu" class="ml-[35vw] mt-5"></ul>
