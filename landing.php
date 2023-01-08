@@ -58,13 +58,13 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 
     <h2 class="text-orange-500 ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Genres</h2>
-    <div class="containerGenre text-white ml-[10px]   overflow-x-auto grid grid-rows-1 md:grid-cols-4 md:justify-items-center lg:overflow-x-hidden id='crudApp'"></div>
+    <div class="containerGenre flex text-white ml-[10px] overflow-x-auto md:grid grid-rows-1 md:grid-cols-4 md:justify-items-center lg:overflow-x-hidden id='crudApp'"></div>
 
 
 
 
     <h2 class='text-orange-500 ml-[20px] mt-[40px] mb-[20px] font-poppins font-semibold text-[16px]'>Films populaires du moment</h2>
-    <div class='container ml-[20px]flex overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 md:overflow-x-hidden' id='crudApp'></div>
+    <div class='container ml-[20px] flex overflow-x-auto  md:grid md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 md:overflow-x-hidden' id='crudApp'></div>
 
     <!-- <button id='getBtn'>get Data</button> -->
     <!-- <button id='postBtn'>2</button> -->
@@ -136,11 +136,11 @@ error_reporting(E_ALL & ~E_NOTICE);
 
         echo "<br><br>
         <div class='block'>
-        <div class='ml-[20px] font-poppins font-semibold text-[16px]'><h3> " . $album['name'] . "</h3></div>
+        <div class='text-white ml-[20px] font-poppins font-semibold text-[16px]'><h3> " . $album['name'] . "</h3></div>
         <p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>" . $album['likes'] . " likes</p>
         ";
         if ($album['isPublic'] == 0) {
-            echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>publique</p>";
+            echo "<p class=' text-gray-400 ml-[20px] font-poppins text-[12px]'>publique</p>";
         } else {
             echo "<p class='text-gray-400 ml-[20px] font-poppins text-[12px]'>privé</p><br>";
         }
