@@ -1,58 +1,3 @@
-// // on affiche la barre input pour rechercher les movies
-
-// // const inputField = document.querySelector('#search-input');
-
-// inputField.addEventListener('input', () => {
-//     // Effectuez la recherche ici
-//   });
-
-
-
-// // async function searchMovies(searchTerm) {
-// //     const url = `https://api.themoviedb.org/3/search/movie?api_key=64f788e08bd9e0a43741986b76b23424&query=${searchTerm}`;
-// //     try {
-// //       const response = await axios.get(url);
-// //       console.log(response.data.results);
-// //     } catch (error) {
-// //       console.error(error);
-// //     }
-// //   }
-
-
-
-// const inputField = document.querySelector('#search-input');
-
-// inputField.addEventListener('input', () => {
-//     // Effectuez la recherche ici
-//   });
-
-//   const movieSearch = document.querySelector('.movieSearch')
-//   axios.get(`https://api.themoviedb.org/3/search/movie?api_key=64f788e08bd9e0a43741986b76b23424&query=ava`).then(response => {
-//       console.log(response.data.results)
-//       response.data.results.forEach(element => {
-  
-//           movieSearch.innerHTML += " <div class='px-[10px] mt-[20px]'>" +
-//           `<a href='genre.php?id=${element.id}'> ${element.title}</a>` + 
-//           // `<a href='movie.php?id=${element.id}'><img src='https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${element.poster_path}' alt=''></a>`
-  
-//           "</div>"
-  
-//       });
-
-//     })
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -83,7 +28,7 @@ const container = document.querySelector('.container')
         console.log(response.data.results)
         response.data.results.forEach(element => {
 
-            container.innerHTML += "<div> <div class='ml-[4px] w-[145px] h-[250px] '>" +
+            container.innerHTML += "<div class=''> <div class=' w-[145px] h-[250px] '>" +
 
 
              
