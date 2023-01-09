@@ -40,7 +40,7 @@ error_reporting(E_ALL & ~E_NOTICE);
             <a class="flex ease-in-out duration-300 hover:text-gray-300" href="search.php"><img class="w-[25px] h-[25px]" src="img/loupe%20(1).png" alt="">
                 <p class="ml-[15px]">recherche</p>
             </a>
-            <a class="flex ease-in-out duration-300 hover:text-gray-300" href="#"><img class="w-[22px] h-[25px]" src="img/invit.png" alt="">
+            <a class="flex ease-in-out duration-300 hover:text-gray-300" href="invitation.php"><img class="w-[22px] h-[25px]" src="img/invit.png" alt="">
                 <p class="ml-[15px]">invitations</p>
             </a>
             <a href="deconnexion.php" class="  text-white bg-orange-500 px-5 p-2 rounded-[16px] -translate-y-2">

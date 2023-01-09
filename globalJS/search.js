@@ -21,7 +21,7 @@
                         let movie = response.data.results
                         
                         propositions.innerHTML = "";
-    
+                        
                         for (let i = 0; i <= 4; i++) {
                             let resultat = document.createElement("li");
                             let myLink = "movie.php?id="+movie[i].id+"&name=" + encodeURIComponent(movie[i].title) + "&bin=" + movie[i]['poster_path']
