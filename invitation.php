@@ -54,7 +54,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     </a>
     <h1 class="text-white mt-[50px] text-center font-poppins font-semibold text-[20px]">Bonjour <?php echo $_SESSION['user']; ?></h1>
 
-    <h2 class="text-orange-500 ml-[20px] mt-[20px] font-poppins font-semibold text-[16px] ">Découvrez les albums d'autres utilisateurs</h2>
+    <h2 class="text-orange-500 ml-[20px] mt-[20px] font-poppins font-semibold text-[25px] ">Découvrez les albums d'autres utilisateurs</h2>
 
     <?php
 
@@ -118,7 +118,7 @@ error_reporting(E_ALL & ~E_NOTICE);
     $i = "";
     foreach ($users as $user) {
 
-        echo "<div class='bg-white text-orange-500 w-[10vw] text-center mt-8'>" . $user['pseudo'] . "</div>";
+        echo "<div class='text-white font-bold text-[30px] w-[10vw] text-center mt-8'>" . $user['pseudo'] . "</div>";
 
         foreach ($albums as $album) {
             if ($album['users_id'] == $user['id']) {
